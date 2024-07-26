@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+#game {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.flag-icon {
+    font-size: 100px;
+    margin-bottom: 10px; /* Ajustar el espacio para el nombre del país */
+}
+
+#flag-container {
+    text-align: center;
+}
+
+#country-name {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+#options button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #4f5fd9;
+}
+
+#next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Asegúrate de que el contenedor de opciones tenga un display flex */
+#options {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en la siguiente línea si no caben en una línea */
+}
+
+/* Estilo para cada botón dentro de #options */
+#options button {
+    margin: 5px; /* Espaciado entre los botones */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /* Cambia el cursor cuando se pasa sobre un botón */
+}
