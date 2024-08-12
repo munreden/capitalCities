@@ -349,6 +349,9 @@ function setupQuestions() {
 // Inits the game when questions are saved
 function startGame() {
     document.getElementById('continent-selection').style.display = 'none';
+    const titleQuestion = 'Capital de';
+    let title = document.getElementById('title');
+    title.innerText = titleQuestion;
     document.getElementById('game').classList.remove('d-none');
     nextQuestion();
 }
@@ -425,12 +428,12 @@ function checkAnswer(selectedCapital, rightOption) {
     // console.log('Selected capital: ' + selectedCapital + '-- Right option: ' + rightOption);
     feedbackDiv = document.getElementById('feedback');
     if (selectedCapital == rightOption) {
-        feedbackDiv.innerText = '¡Correcto!';
+        feedbackDiv.innerHTML = '<b>¡Correcto!</b>';
         feedbackDiv.classList.toggle('alert-danger', false);
         feedbackDiv.classList.toggle('alert-success', true);
     }
     else {
-        feedbackDiv.innerText = 'Incorrecto. La respuesta correcta es "' + rightOption + '".';
+        feedbackDiv.innerHTML = 'Incorrecto. La respuesta correcta es <b>"' + rightOption + '"</b>.';
         feedbackDiv.classList.toggle('alert-success', false);
         feedbackDiv.classList.toggle('alert-danger', true);
     }

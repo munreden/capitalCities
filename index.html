@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container text-center">
-        <h1>Juego de Capitales del Mundo</h1>
+        <h1 id="title">Juego de Capitales del Mundo</h1>
         
         <div id="continent-selection" class="my-4">
             <h2>Selecciona las partes del mundo que quieres añadir al juego:</h2>
@@ -26,8 +26,9 @@
                 <div id="flag" class="flag-icon"></div>
                 <div id="country-name" class="my-3"></div>
             </div>
-            <div id="options" class="d-flex flex-wrap justify-content-center mb-3"></div>
+            <div class="my-4"></div>
             <div id="feedback" class="mb-3 alert alert-success d-none"></div>
+            <div id="options" class="d-flex flex-wrap justify-content-center mb-3"></div>
             <button id="next-button" class="btn btn-primary" onclick="nextQuestion()">Siguiente Pregunta</button>
         </div>
     </div>
