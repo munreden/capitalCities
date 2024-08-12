@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Capitales del Mundo</title>
+    <title>Munreden - Juego de Capitales del Mundo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Juego de Capitales del Mundo</h1>
-    <div id="game">
-        <div id="flag-container">
-            <span id="flag" class="flag-icon"></span>
-            <p id="country-name"></p>
+    <div class="container text-center">
+        <h1>Juego de Capitales del Mundo</h1>
+        
+        <div id="continent-selection" class="my-4">
+            <h2>Selecciona las partes del mundo que quieres añadir al juego:</h2>
+            <div id="continents" role="group" aria-label="continents"></div>
+            <div>
+                <button id="btn-start-game" class="btn btn-primary">¡Empezar!</button>
+            </div>
+            <div id="error-message" class="alert alert-warning d-none" role="alert"></div>
         </div>
-        <div id="options"></div>
-        <p id="feedback"></p>
-        <button id="next-button" onclick="nextQuestion()">Siguiente</button>
+        
+        <div id="game" class="my-4 d-none">
+            <div id="flag-icon-background">
+                <div id="flag" class="flag-icon"></div>
+                <div id="country-name" class="my-3"></div>
+            </div>
+            <div id="options" class="d-flex flex-wrap justify-content-center mb-3"></div>
+            <div id="feedback" class="mb-3 alert alert-success d-none"></div>
+            <button id="next-button" class="btn btn-primary" onclick="nextQuestion()">Siguiente Pregunta</button>
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

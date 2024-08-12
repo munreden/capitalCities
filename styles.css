@@ -1,64 +1,143 @@
 body {
-    font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f0f0;
     padding: 20px;
 }
 
-#game {
-    background-color: #fff;
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #bd1212;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#continent-selection {
     border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff; /* Fondo claro para el contenedor del juego */
     padding: 20px;
-    display: inline-block;
     margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.btn.btn-outline-danger {
+    margin: 5px;
+    border-radius: 5px;
+    color: #000000;
+    border-color: #bd1212
+}
+
+.btn.btn-outline-danger:hover {
+    background-color: #be4646;
+    color:#ffffff
+}
+
+#continent-selection .btn.btn-outline-danger.active {
+    background-color: #bd1212;
+    color:#ffffff
+}
+
+#continent-selection.my-4 div {
+    margin-top: 10px;
+}
+
+#btn-start-game {
+    background-color: #bd1212;
+    border: 1px solid #ccc;
+    font-size: 22px;
+    /* border-radius: 100%; */
+}
+
+#game {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff; /* Fondo claro para el contenedor del juego */
+    padding: 20px;
+    /* display: inline-block; */
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .flag-icon {
-    font-size: 100px;
-    margin-bottom: 10px; /* Ajustar el espacio para el nombre del país */
+    font-size: 200px;
+    border-radius: 5px;
 }
 
-#flag-container {
-    text-align: center;
+#flag-icon-background {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 #country-name {
     margin-top: 10px;
-    font-size: 1.2em;
+    display: block;
+    font-size: 25px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
+    background-color: #bd1212;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+#options {
+    margin: 20px;
 }
 
 #options button {
     display: block;
-    margin: 10px auto;
+    margin: 5px;
     padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn.btn-outline-danger {
+    margin: 5px;
+    border-radius: 5px;
+    color: #000000;
+    border-color: #bd1212
+}
+
+#options button .btn.btn-outline-danger:hover {
+    background-color: #be4646;
+    color:#ffffff
+}
+
+#options .btn.btn-outline-danger.active {
+    background-color: #bd1212;
+    color:#ffffff
+}
+
+#options .btn.btn-outline-danger.disabled {
+    background-color: #808080;
+    color:#000000
 }
 
 #feedback {
     margin-top: 20px;
-    font-size: 1.1em;
-    color: #4f5fd9;
+    font-size: 15px;
 }
 
 #next-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
+    background-color: #bd1212;
+    border: 1px solid #ccc;
+    font-size: 22px;
+    /* border-radius: 100%; */
 }
 
-/* Asegúrate de que el contenedor de opciones tenga un display flex */
-#options {
-    display: flex;
-    justify-content: center; /* Centra los botones horizontalmente */
-    flex-wrap: wrap; /* Permite que los botones se envuelvan en la siguiente línea si no caben en una línea */
-}
-
-/* Estilo para cada botón dentro de #options */
-#options button {
-    margin: 5px; /* Espaciado entre los botones */
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer; /* Cambia el cursor cuando se pasa sobre un botón */
-}
