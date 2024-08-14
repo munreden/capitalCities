@@ -244,8 +244,10 @@ const data = {
     ]
 };
 
+let questions = [];
 let usedQuestions = [];
 let incorrectOptions = [];
+let score = 0;
 const incorrectOptionsNumber = 3;
 
 /*** MAIN ****/
@@ -321,7 +323,7 @@ function createAnswerButtons(currentQuestion) {
 
 // Configures the used questions inside the game
 function setupQuestions() {
-    questions = []; //Cleans if previous questions were applied
+    // questions = []; //Cleans if previous questions were applied
     let selectedContinents = Array.from(document.querySelectorAll('#continent-selection .btn.btn-outline-danger.active'))
         .map(button => button.getAttribute('data-id'));
     // console.log('Selected Continents: ', selectedContinents); // Debugging
@@ -374,6 +376,8 @@ function nextQuestion() {
         let countryName = document.getElementById('country-name');
         flag.className = 'flag-icon ' + currentQuestion.flagClass;
         countryName.innerText = currentQuestion.country;
+        let globalScore = questions.length;
+        document.getElementById('total-questions').innerText = globalScore;
         createAnswerButtons(currentQuestion);
         feedback.innerHTML = ''; // Cleans previous HTML info
         feedback.classList.add('d-none');
@@ -389,12 +393,23 @@ function nextQuestion() {
                 checkAnswer(selectedCapital, currentQuestion.capital);
             });
         });
-    } else {
+    } 
+    else {
         feedback.classList.toggle('alert-success', false);
         feedback.classList.toggle('alert-danger', false);
         feedback.classList.toggle('alert-info', true);
         feedback.classList.remove('d-none');
         feedback.innerText = '¡Juego terminado!';
+        nextButton.classList.add('d-none');
+        let correctAnswers = document.getElementById('correct-answers');
+        let correctAnswersTitle = document.getElementById('correct-answers-title');
+        let totalAnswered = document.getElementById('total-answered');
+        let totalAnsweredTitle = document.getElementById('total-answered-title');
+        correctAnswers.innerText = score;
+        correctAnswers.classList.remove('d-none');
+        correctAnswersTitle.classList.remove('d-none');
+        totalAnswered.classList.add('d-none');
+        totalAnsweredTitle.classList.add('d-none');
         nextButton.classList.add('d-none');
     }
 }
@@ -426,8 +441,12 @@ function getIncorrectOptions(correctCapital) {
 // Verifies the answer
 function checkAnswer(selectedCapital, rightOption) {
     // console.log('Selected capital: ' + selectedCapital + '-- Right option: ' + rightOption);
-    feedbackDiv = document.getElementById('feedback');
+    const feedbackDiv = document.getElementById('feedback');
+    let totalAnswered = document.getElementById('total-answered');
+    // console.log(globalScore);
     if (selectedCapital == rightOption) {
+        score = score + 1;
+        // console.log(score);
         feedbackDiv.innerHTML = '<b>¡Correcto!</b>';
         feedbackDiv.classList.toggle('alert-danger', false);
         feedbackDiv.classList.toggle('alert-success', true);
@@ -438,4 +457,5 @@ function checkAnswer(selectedCapital, rightOption) {
         feedbackDiv.classList.toggle('alert-danger', true);
     }
     feedbackDiv.classList.remove('d-none');
+    totalAnswered.innerText = usedQuestions.length;
 }

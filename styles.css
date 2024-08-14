@@ -19,7 +19,7 @@ h1 {
 #continent-selection {
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #ffffff; /* Fondo claro para el contenedor del juego */
+    background-color: #ffffff;
     padding: 20px;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -69,7 +69,7 @@ h2 {
 }
 
 .flag-icon {
-    font-size: 200px;
+    font-size: 160px;
     border-radius: 5px;
 }
 
@@ -130,7 +130,7 @@ h2 {
 }
 
 #feedback {
-    margin: 0px 20%;
+    margin: 20px;
     font-size: 15px;
 }
 
